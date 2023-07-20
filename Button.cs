@@ -5,14 +5,16 @@ using UnityEngine.UIElements;
 
 public class SettingsScreenController : MonoBehaviour
 {
+    [SerializeField] private GameObject MouseInstructionModal;
     private Label MousestatusLabel;
     private Label KeyboardstatusLabel;
     private Label MotionInputstatusLabel;
-    private Toggle MouseToggleButton;
-    private Toggle KeyboardToggleButton;
-    private Toggle MotionInputToggleButton;
+    [SerializeField] public Toggle MouseToggleButton;
+    public Toggle KeyboardToggleButton;
+    public Toggle MotionInputToggleButton;
 
-    void Start()
+
+void Start()
     {
         var UIDocument = GetComponent<UIDocument>();
         var root = UIDocument.rootVisualElement;
@@ -33,7 +35,9 @@ public class SettingsScreenController : MonoBehaviour
         KeyboardToggleButton.RegisterCallback<ChangeEvent<bool>>(OnKeyboardToggleButtonChanged);
 
         MotionInputToggleButton.RegisterCallback<ChangeEvent<bool>>(OnMotionInputToggleButtonChanged);
+
     }
+
 
     void OnMouseToggleButtonChanged(ChangeEvent<bool> evt)
     {
@@ -48,7 +52,18 @@ public class SettingsScreenController : MonoBehaviour
             MousestatusLabel.text = "OFF";
             MousestatusLabel.style.color = Color.red;
         }
+
+        // Show or hide the MouseInstructionModal based on the toggle button state
+        if (evt.newValue)
+        {
+            MouseInstructionModal.SetActive(true); // Show the modal
+        }
+        else
+        {
+            MouseInstructionModal.SetActive(false); // Hide the modal
+        }
     }
+
 
     void OnKeyboardToggleButtonChanged(ChangeEvent<bool> evt)
     {
