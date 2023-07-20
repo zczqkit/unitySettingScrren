@@ -5,8 +5,12 @@ using UnityEngine.UIElements;
 
 public class SettingsScreenController : MonoBehaviour
 {
-    private Label statusLabel;
-    private Toggle myToggleButton;
+    private Label MousestatusLabel;
+    private Label KeyboardstatusLabel;
+    private Label MotionInputstatusLabel;
+    private Toggle MouseToggleButton;
+    private Toggle KeyboardToggleButton;
+    private Toggle MotionInputToggleButton;
 
     void Start()
     {
@@ -14,25 +18,65 @@ public class SettingsScreenController : MonoBehaviour
         var root = UIDocument.rootVisualElement;
 
         // Find the toggle button and the label
-        myToggleButton = root.Q<Toggle>("myToggleButton");
-        statusLabel = root.Q<Label>("statusLabel");
+        MouseToggleButton = root.Q<Toggle>("MouseToggleButton");
+        MousestatusLabel = root.Q<Label>("MousestatusLabel");
+
+        KeyboardToggleButton = root.Q<Toggle>("KeyboardToggleButton");
+        KeyboardstatusLabel = root.Q<Label>("KeyboardstatusLabel");
+
+        MotionInputToggleButton = root.Q<Toggle>("MotionInputToggleButton");
+        MotionInputstatusLabel = root.Q<Label>("MotionInputstatusLabel");
 
         // Attach the change event handler
-        myToggleButton.RegisterCallback<ChangeEvent<bool>>(OnToggleButtonChanged);
+        MouseToggleButton.RegisterCallback<ChangeEvent<bool>>(OnMouseToggleButtonChanged);
+
+        KeyboardToggleButton.RegisterCallback<ChangeEvent<bool>>(OnKeyboardToggleButtonChanged);
+
+        MotionInputToggleButton.RegisterCallback<ChangeEvent<bool>>(OnMotionInputToggleButtonChanged);
     }
 
-    void OnToggleButtonChanged(ChangeEvent<bool> evt)
+    void OnMouseToggleButtonChanged(ChangeEvent<bool> evt)
     {
         // Change the label text and color based on the toggle button state
         if (evt.newValue)
         {
-            statusLabel.text = "ON";
-            statusLabel.style.color = Color.green;
+            MousestatusLabel.text = "ON";
+            MousestatusLabel.style.color = Color.green;
         }
         else
         {
-            statusLabel.text = "OFF";
-            statusLabel.style.color = Color.red;
+            MousestatusLabel.text = "OFF";
+            MousestatusLabel.style.color = Color.red;
+        }
+    }
+
+    void OnKeyboardToggleButtonChanged(ChangeEvent<bool> evt)
+    {
+        // Change the label text and color based on the toggle button state
+        if (evt.newValue)
+        {
+            KeyboardstatusLabel.text = "ON";
+            KeyboardstatusLabel.style.color = Color.green;
+        }
+        else
+        {
+            KeyboardstatusLabel.text = "OFF";
+            KeyboardstatusLabel.style.color = Color.red;
+        }
+    }
+
+    void OnMotionInputToggleButtonChanged(ChangeEvent<bool> evt)
+    {
+        // Change the label text and color based on the toggle button state
+        if (evt.newValue)
+        {
+            MotionInputstatusLabel.text = "ON";
+            MotionInputstatusLabel.style.color = Color.green;
+        }
+        else
+        {
+            MotionInputstatusLabel.text = "OFF";
+            MotionInputstatusLabel.style.color = Color.red;
         }
     }
 }
