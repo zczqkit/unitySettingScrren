@@ -12,7 +12,7 @@ public class ImageSwitcher : MonoBehaviour
     void Start()
     {
         var root = GetComponent<UIDocument>().rootVisualElement;
-        mouseImage = root.Q<VisualElement>("Mouseimage");
+        mouseImage = root.Q<VisualElement>("MouseImage");
         StartCoroutine(SwitchImage());
     }
 
