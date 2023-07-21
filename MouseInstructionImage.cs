@@ -9,11 +9,22 @@ public class ImageSwitcher : MonoBehaviour
     public Texture2D image2;
     private bool isImage1 = true;
 
-    void Start()
+    private Coroutine imageSwitchCoroutine;
+
+    private void OnEnable()
     {
         var root = GetComponent<UIDocument>().rootVisualElement;
         mouseImage = root.Q<VisualElement>("MouseImage");
-        StartCoroutine(SwitchImage());
+        imageSwitchCoroutine = StartCoroutine(SwitchImage());
+    }
+
+    private void OnDisable()
+    {
+        if (imageSwitchCoroutine != null)
+        {
+            StopCoroutine(imageSwitchCoroutine);
+            imageSwitchCoroutine = null;
+        }
     }
 
     IEnumerator SwitchImage()
