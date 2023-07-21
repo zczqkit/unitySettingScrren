@@ -17,7 +17,7 @@ public class SettingsScreenController : MonoBehaviour
     [SerializeField] public Toggle MotionInputToggleButton;
 
 
-void Start()
+void OnEnable()
     {
         var UIDocument = GetComponent<UIDocument>();
         var root = UIDocument.rootVisualElement;
