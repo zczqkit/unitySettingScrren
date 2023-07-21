@@ -8,6 +8,7 @@ public class SettingsScreenController : MonoBehaviour
     [SerializeField] private GameObject MouseInstructionModal;
     [SerializeField] private GameObject KeyboardInstructionModal;
     [SerializeField] private GameObject MotionInputInstructionModal;
+    [SerializeField] private Button controlsNextButton;
     private Label MousestatusLabel;
     private Label KeyboardstatusLabel;
     private Label MotionInputstatusLabel;
@@ -38,8 +39,21 @@ void Start()
 
         MotionInputToggleButton.RegisterCallback<ChangeEvent<bool>>(OnMotionInputToggleButtonChanged);
 
+        controlsNextButton = root.Q<Button>("ControlsNextButton");
+        CheckToggleStatus();
     }
 
+    void CheckToggleStatus()
+    {
+        if (MouseToggleButton.value || KeyboardToggleButton.value || MotionInputToggleButton.value)
+        {
+            controlsNextButton.SetEnabled(true);
+        }
+        else
+        {
+            controlsNextButton.SetEnabled(false);
+        }
+    }
 
     void OnMouseToggleButtonChanged(ChangeEvent<bool> evt)
     {
@@ -64,6 +78,8 @@ void Start()
         {
             MouseInstructionModal.SetActive(false); // Hide the modal
         }
+
+        CheckToggleStatus();
     }
 
 
@@ -90,6 +106,8 @@ void Start()
         {
             KeyboardInstructionModal.SetActive(false); // Hide the modal
         }
+
+        CheckToggleStatus();
     }
 
     void OnMotionInputToggleButtonChanged(ChangeEvent<bool> evt)
@@ -114,5 +132,7 @@ void Start()
         {
             MotionInputInstructionModal.SetActive(false); // Hide the modal
         }
+
+        CheckToggleStatus();
     }
 }
