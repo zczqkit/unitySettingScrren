@@ -10,6 +10,8 @@ public class BirdScript : MonoBehaviour
     public bool birdIsAlive = true;
     public GameObject gameOverScreen;
 
+    public SettingsScreenController settingsController; // reference to SettingsScreenController
+
 
     // Start is called before the first frame update
     void Start()
@@ -20,11 +22,16 @@ public class BirdScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && birdIsAlive)
-            {
+        // Check the state of the MouseToggleButton
+        if (settingsController.MouseToggleButton.value && Input.GetMouseButtonDown(1) && birdIsAlive)
+        {
             myRidigbody.velocity = Vector2.up * flapStrength;
         }
-        
+        // Check the state of the KeyboardToggleButton
+        else if (settingsController.KeyboardToggleButton.value && Input.GetKeyDown(KeyCode.Space) && birdIsAlive)
+        {
+            myRidigbody.velocity = Vector2.up * flapStrength;
+        }
 
     }
 
