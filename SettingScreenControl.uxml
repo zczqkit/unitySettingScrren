@@ -7,7 +7,9 @@
         <ui:VisualElement name="HomeBody" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row;">
             <ui:VisualElement name="SideMenu" style="flex-grow: 1; background-color: rgb(197, 197, 197); width: 25%;">
                 <ui:VisualElement name="About" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); height: 10%; flex-direction: row;">
-                    <ui:VisualElement name="Status" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 15%;" />
+                    <ui:VisualElement name="Status" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 15%; align-items: center; justify-content: center;">
+                        <ui:VisualElement style="flex-grow: 1; background-color: rgb(43, 178, 0); width: 60%; max-width: 60%; min-width: 60%; height: 60%; max-height: 60%; min-height: 60%; background-image: url(&apos;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=7433338533053954386&amp;guid=3119cceb609c440d0bfeb68c50b9096a&amp;type=3#check@2x&apos;); border-top-left-radius: 50px; border-bottom-left-radius: 50px; border-top-right-radius: 50px; border-bottom-right-radius: 50px;" />
+                    </ui:VisualElement>
                     <ui:VisualElement name="Icon" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 25%; align-items: center; justify-content: center;">
                         <ui:VisualElement name="VisualElement" class="sideMenuIcon" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); background-image: url(&apos;project://database/Assets/unitySettingScrren/Icons/About.png?fileID=2800000&amp;guid=1b4b7a7f3a26e4cad9ddc2fcfe5f114c&amp;type=3#About&apos;); width: 40%; height: 55%; max-width: 40%; max-height: 55%; min-width: 40%; min-height: 55%; font-size: 20%;" />
                     </ui:VisualElement>
@@ -18,10 +20,14 @@
                     <ui:VisualElement name="Icon" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 25%; align-self: center; justify-content: center;">
                         <ui:VisualElement class="sideMenuIcon" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); background-image: url(&apos;project://database/Assets/unitySettingScrren/Icons/Control.png?fileID=2800000&amp;guid=255b9847cdddb4bba84437806fd970ab&amp;type=3#Control&apos;); width: 40%; height: 80%; max-width: 40%; max-height: 80%; justify-content: center; align-self: center; align-items: center; flex-direction: column-reverse; min-width: 40%; min-height: 80%; font-size: 20%;" />
                     </ui:VisualElement>
-                    <ui:VisualElement name="Status" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 15%;" />
+                    <ui:VisualElement name="Status" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 15%; align-items: center; justify-content: center;">
+                        <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 60%; height: 60%; max-width: 60%; min-width: 60%; max-height: 60%; min-height: 60%; background-image: url(&apos;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=-6527069497977903076&amp;guid=3119cceb609c440d0bfeb68c50b9096a&amp;type=3#check-dash&apos;);" />
+                    </ui:VisualElement>
                 </ui:VisualElement>
                 <ui:VisualElement name="Start" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); height: 10%; flex-direction: row;">
-                    <ui:VisualElement name="Status" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 15%;" />
+                    <ui:VisualElement name="Status" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 15%; align-items: center; justify-content: center;">
+                        <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 60%; height: 60%; max-width: 60%; min-width: 60%; max-height: 60%; min-height: 60%; background-image: url(&apos;project://database/Assets/unitySettingScrren/UnityDefaultRuntimeTheme.tss?fileID=4456449167576933126&amp;guid=57ddf13486cab4ecea3b0ebe429141d5&amp;type=3#check-dash@2x&apos;);" />
+                    </ui:VisualElement>
                     <ui:VisualElement name="Icon" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 25%; align-self: center; justify-content: center; align-items: center; max-width: none; min-width: auto; height: auto; max-height: none; min-height: auto;">
                         <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); background-image: url(&apos;project://database/Assets/unitySettingScrren/Icons/Start.png?fileID=2800000&amp;guid=745114451826f4979b836ccddc7d680e&amp;type=3#Start&apos;); width: 40%; height: 70%; max-width: 40%; max-height: 70%; min-width: 40%; min-height: 70%;" />
                     </ui:VisualElement>
