@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class MKeyboardModal : MonoBehaviour
+public class KeyboardModal : MonoBehaviour
 {
     [SerializeField] private GameObject targetPageNext;
     [SerializeField] private GameObject targetPageBack;
