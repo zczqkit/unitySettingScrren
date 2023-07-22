@@ -5,12 +5,21 @@ using UnityEngine;
 
 public class PipeMiddleScript : MonoBehaviour
 {
-    //public LogicScript logic;
+    public LogicScript logic;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        //logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
+        GameObject logicObject = GameObject.FindGameObjectWithTag("Logic");
+
+        if (logicObject != null)
+        {
+            logic = logicObject.GetComponent<LogicScript>();
+        }
+
+        if (logic == null)
+        {
+            Debug.LogError("Cannot find 'LogicScript' object or component. Please check if it exists and is correctly tagged.");
+        }
     }
 
     // Update is called once per frame
@@ -19,13 +28,13 @@ public class PipeMiddleScript : MonoBehaviour
 
     }
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject.layer == 3)
-    //    {
-    //        logic.addScore();
-    //    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 3)
+        {
+            logic.addScore();
+        }
 
-    //}
+    }
 
 }

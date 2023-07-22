@@ -33,9 +33,22 @@ public class BirdScript : MonoBehaviour
             myRidigbody.velocity = Vector2.up * flapStrength;
         }
 
+        // Check if bird is out of the screen
+        Vector3 birdInViewport = Camera.main.WorldToViewportPoint(transform.position);
+        if (birdInViewport.y > 1 || birdInViewport.y < 0)
+        {
+            GameOver();
+        }
+
     }
 
     void OnCollisionEnter2D(Collision2D collision)
+    {
+        gameOverScreen.SetActive(true);
+        birdIsAlive = false;
+    }
+
+    void GameOver()
     {
         gameOverScreen.SetActive(true);
         birdIsAlive = false;
