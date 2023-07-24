@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class StartMotionInputPage : MonoBehaviour
+public class StartGamePage : MonoBehaviour
 {
     [SerializeField] private GameObject targetPageNext1;
     [SerializeField] private GameObject targetPageNext2;
