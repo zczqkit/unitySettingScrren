@@ -7,7 +7,7 @@ public class SettingsScreenController : MonoBehaviour
 {
     [SerializeField] private GameObject MouseInstructionModal;
     [SerializeField] private GameObject KeyboardInstructionModal;
-    [SerializeField] private GameObject MotionInputInstructionModal;
+    [SerializeField] private GameObject MotionInputSeclect;
     [SerializeField] private Button controlsNextButton;
     private Label MousestatusLabel;
     private Label KeyboardstatusLabel;
@@ -126,11 +126,11 @@ void OnEnable()
         // Show or hide the MouseInstructionModal based on the toggle button state
         if (evt.newValue)
         {
-            MotionInputInstructionModal.SetActive(true); // Show the modal
+            MotionInputSeclect.SetActive(true); 
         }
         else
         {
-            MotionInputInstructionModal.SetActive(false); // Hide the modal
+            MotionInputSeclect.SetActive(false); 
         }
 
         CheckToggleStatus();
