@@ -7,6 +7,7 @@ public class WebcamDisplay : MonoBehaviour
 
     void Start()
     {
+        // Specify the name of the virtual camera here
         webcamTexture = new WebCamTexture();
         GetComponent<RawImage>().texture = webcamTexture;
         webcamTexture.Play();

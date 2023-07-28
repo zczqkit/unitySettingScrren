@@ -6,7 +6,6 @@ public class Page : MonoBehaviour
     public SettingsScreenController settingsController; // reference to SettingsScreenController
 
     [SerializeField] private GameObject targetPageStart;
-    [SerializeField] private GameObject targetPageStatwithMotionInput;
     [SerializeField] private GameObject whatIsMotionInputPage;
     [SerializeField] private GameObject targetPageBack;
     private Button nextButton;
@@ -36,14 +35,7 @@ public class Page : MonoBehaviour
     void LoadTargetPageNext()
     {
         gameObject.SetActive(false);
-        if (settingsController.MotionInputToggleButton.value)
-        {
-            if (targetPageStatwithMotionInput != null)
-            {
-                targetPageStatwithMotionInput.SetActive(true);
-            }
-        }
-        else if (settingsController.MouseToggleButton.value || settingsController.KeyboardToggleButton.value)
+        if (settingsController.MotionInputToggleButton.value || settingsController.MouseToggleButton.value || settingsController.KeyboardToggleButton.value)
         {
             if (targetPageStart != null)
             {
