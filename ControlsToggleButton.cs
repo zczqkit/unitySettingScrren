@@ -126,7 +126,8 @@ void OnEnable()
         // Show or hide the MouseInstructionModal based on the toggle button state
         if (evt.newValue)
         {
-            MotionInputSeclect.SetActive(true); 
+            MotionInputSeclect.SetActive(true);
+            gameObject.SetActive(false);
         }
         else
         {

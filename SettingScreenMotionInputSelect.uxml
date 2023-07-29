@@ -56,7 +56,7 @@
                             <ui:VisualElement name="Switch" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 40%; max-width: 40%; min-width: 40%; justify-content: center; flex-direction: row; align-items: center;">
                                 <ui:VisualElement name="SwitchBox" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 70%; max-width: 70%; min-width: 70%; height: 60%; max-height: 60%; min-height: 60%; flex-direction: row;">
                                     <ui:Toggle name="MotionInput1Button" style="width: 50%; flex-direction: column; align-items: center; font-size: 20%;" />
-                                    <ui:Label tabindex="-1" text="OFF" display-tooltip-when-elided="true" name="MotionInput1ButtonstatusLabel" style="width: 50%; font-size: 18%; -unity-text-align: middle-left; -unity-font-style: normal; color: rgb(255, 0, 0);" />
+                                    <ui:Label tabindex="-1" text="OFF" display-tooltip-when-elided="true" name="MotionInput1statusLabel" style="width: 50%; font-size: 18%; -unity-text-align: middle-left; -unity-font-style: normal; color: rgb(255, 0, 0);" />
                                 </ui:VisualElement>
                             </ui:VisualElement>
                         </ui:VisualElement>

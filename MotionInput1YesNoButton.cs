@@ -5,7 +5,7 @@ public class MotionInputModal : MonoBehaviour
 {
     [SerializeField] private GameObject targetPageNext;
     [SerializeField] private GameObject targetPageBack;
-    [SerializeField] private SettingsScreenController settingsScreenController;
+    [SerializeField] private MotionInputController MotionInputController;
     private Button MotionInputYesButton;
     private Button MotionInputNoButton;
 
@@ -28,9 +28,9 @@ public class MotionInputModal : MonoBehaviour
     void LoadTargetPageNext()
     {
         // Set MouseToggleButton to ON when MouseYesButton is clicked
-        if (settingsScreenController != null)
+        if (MotionInputController != null)
         {
-            settingsScreenController.MotionInputToggleButton.value = true;
+            MotionInputController.MotionInput1Button.value = true;
         }
 
         gameObject.SetActive(false);
@@ -43,9 +43,9 @@ public class MotionInputModal : MonoBehaviour
     void LoadTargetPageBack()
     {
         // Set MouseToggleButton to OFF when MouseNoButton is clicked
-        if (settingsScreenController != null)
+        if (MotionInputController != null)
         {
-            settingsScreenController.MotionInputToggleButton.value = false;
+            MotionInputController.MotionInput1Button.value = false;
         }
 
         gameObject.SetActive(false);

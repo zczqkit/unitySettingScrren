@@ -5,9 +5,9 @@ using UnityEngine.UIElements;
 
 public class MotionInputController : MonoBehaviour
 {
-    [SerializeField] private GameObject MotionInputInstructionModal1;
-    [SerializeField] private GameObject MotionInputInstructionModal2;
-    [SerializeField] private GameObject MotionInputInstructionModal3;
+    [SerializeField] private GameObject MotionInput1InstructionModal;
+    [SerializeField] private GameObject MotionInput2InstructionModal;
+    [SerializeField] private GameObject MotionInput3InstructionModal;
     [SerializeField] private Button MotionInputSelectNextButton;
     private Label MotionInput1statusLabel;
     private Label MotionInput2statusLabel;
@@ -60,7 +60,7 @@ void OnEnable()
         // Change the label text and color based on the toggle button state
         if (evt.newValue)
         {
-            MotionInput1Button.text = "ON";
+            MotionInput1statusLabel.text = "ON";
             MotionInput1statusLabel.style.color = Color.green;
         }
         else
@@ -69,17 +69,17 @@ void OnEnable()
             MotionInput1statusLabel.style.color = Color.red;
         }
 
-        //// Show or hide the MouseInstructionModal based on the toggle button state
-        //if (evt.newValue)
-        //{
-        //    MouseInstructionModal.SetActive(true); // Show the modal
-        //}
-        //else
-        //{
-        //    MouseInstructionModal.SetActive(false); // Hide the modal
-        //}
+        // Show or hide the MouseInstructionModal based on the toggle button state
+        if (evt.newValue)
+        {
+            MotionInput1InstructionModal.SetActive(true); // Show the modal
+        }
+        else
+        {
+            MotionInput1InstructionModal.SetActive(false); // Hide the modal
+        }
 
-        //CheckToggleStatus();
+        CheckToggleStatus();
     }
 
 
@@ -97,17 +97,17 @@ void OnEnable()
             MotionInput2statusLabel.style.color = Color.red;
         }
 
-        //// Show or hide the MouseInstructionModal based on the toggle button state
-        //if (evt.newValue)
-        //{
-        //    KeyboardInstructionModal.SetActive(true); // Show the modal
-        //}
-        //else
-        //{
-        //    KeyboardInstructionModal.SetActive(false); // Hide the modal
-        //}
+        // Show or hide the MouseInstructionModal based on the toggle button state
+        if (evt.newValue)
+        {
+            MotionInput1InstructionModal.SetActive(true); // Show the modal
+        }
+        else
+        {
+            MotionInput1InstructionModal.SetActive(false); // Hide the modal
+        }
 
-        //CheckToggleStatus();
+        CheckToggleStatus();
     }
 
     void OnMotionInput3ToggleButtonChanged(ChangeEvent<bool> evt)
@@ -123,16 +123,16 @@ void OnEnable()
             MotionInput3statusLabel.text = "OFF";
             MotionInput3statusLabel.style.color = Color.red;
         }
-        //// Show or hide the MouseInstructionModal based on the toggle button state
-        //if (evt.newValue)
-        //{
-        //    MotionInputSeclect.SetActive(true); 
-        //}
-        //else
-        //{
-        //    MotionInputSeclect.SetActive(false); 
-        //}
+        // Show or hide the MouseInstructionModal based on the toggle button state
+        if (evt.newValue)
+        {
+            MotionInput1InstructionModal.SetActive(true);
+        }
+        else
+        {
+            MotionInput1InstructionModal.SetActive(false);
+        }
 
-        //CheckToggleStatus();
+        CheckToggleStatus();
     }
 }

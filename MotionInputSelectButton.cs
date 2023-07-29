@@ -7,6 +7,7 @@ public class MotionInputSelectPage : MonoBehaviour
 
     [SerializeField] private GameObject targetPageStart;
     [SerializeField] private GameObject targetPageBack;
+    [SerializeField] private SettingsScreenController settingsScreenController;
     private Button nextButton;
     private Button backButton;
 
@@ -48,6 +49,11 @@ public class MotionInputSelectPage : MonoBehaviour
         if (targetPageBack != null)
         {
             targetPageBack.SetActive(true);
+        }
+        // Set MotionInputToggleButton on Controls page to OFF when Back Button on MotionInputSelect Page is clicked
+        if (settingsScreenController != null)
+        {
+            settingsScreenController.MotionInputToggleButton.value = false;
         }
     }
 
