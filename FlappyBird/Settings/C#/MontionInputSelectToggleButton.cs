@@ -100,11 +100,11 @@ void OnEnable()
         // Show or hide the MouseInstructionModal based on the toggle button state
         if (evt.newValue)
         {
-            MotionInput1InstructionModal.SetActive(true); // Show the modal
+            MotionInput2InstructionModal.SetActive(true); // Show the modal
         }
         else
         {
-            MotionInput1InstructionModal.SetActive(false); // Hide the modal
+            MotionInput2InstructionModal.SetActive(false); // Hide the modal
         }
 
         CheckToggleStatus();
@@ -126,11 +126,11 @@ void OnEnable()
         // Show or hide the MouseInstructionModal based on the toggle button state
         if (evt.newValue)
         {
-            MotionInput1InstructionModal.SetActive(true);
+            MotionInput3InstructionModal.SetActive(true);
         }
         else
         {
-            MotionInput1InstructionModal.SetActive(false);
+            MotionInput3InstructionModal.SetActive(false);
         }
 
         CheckToggleStatus();

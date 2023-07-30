@@ -1,28 +1,28 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class MotionInputModal : MonoBehaviour
+public class MotionInput3Modal : MonoBehaviour
 {
     [SerializeField] private GameObject targetPageNext;
     [SerializeField] private GameObject targetPageBack;
     [SerializeField] private MotionInputController MotionInputController;
-    private Button MotionInputYesButton;
-    private Button MotionInputNoButton;
+    private Button MotionInput3YesButton;
+    private Button MotionInput3NoButton;
 
     private void OnEnable()
     {
         var uiDocument = GetComponent<UIDocument>();
-        MotionInputYesButton = uiDocument.rootVisualElement.Q<Button>("MotionInputYesButton");
-        MotionInputNoButton = uiDocument.rootVisualElement.Q<Button>("MotionInputNoButton");
+        MotionInput3YesButton = uiDocument.rootVisualElement.Q<Button>("MotionInput3YesButton");
+        MotionInput3NoButton = uiDocument.rootVisualElement.Q<Button>("MotionInput3NoButton");
 
-        MotionInputYesButton.clickable.clicked += LoadTargetPageNext;
-        MotionInputNoButton.clickable.clicked += LoadTargetPageBack;
+        MotionInput3YesButton.clickable.clicked += LoadTargetPageNext;
+        MotionInput3NoButton.clickable.clicked += LoadTargetPageBack;
     }
 
     private void OnDisable()
     {
-        MotionInputYesButton.clickable.clicked -= LoadTargetPageNext;
-        MotionInputNoButton.clickable.clicked -= LoadTargetPageBack;
+        MotionInput3YesButton.clickable.clicked -= LoadTargetPageNext;
+        MotionInput3NoButton.clickable.clicked -= LoadTargetPageBack;
     }
 
     void LoadTargetPageNext()
@@ -30,7 +30,7 @@ public class MotionInputModal : MonoBehaviour
         // Set MouseToggleButton to ON when MouseYesButton is clicked
         if (MotionInputController != null)
         {
-            MotionInputController.MotionInput1Button.value = true;
+            MotionInputController.MotionInput3Button.value = true;
         }
 
         gameObject.SetActive(false);
@@ -45,7 +45,7 @@ public class MotionInputModal : MonoBehaviour
         // Set MouseToggleButton to OFF when MouseNoButton is clicked
         if (MotionInputController != null)
         {
-            MotionInputController.MotionInput1Button.value = false;
+            MotionInputController.MotionInput3Button.value = false;
         }
 
         gameObject.SetActive(false);
