@@ -3,28 +3,48 @@ using UnityEngine.UIElements;
 
 public class SelectGamesPage : MonoBehaviour
 {
-    [SerializeField] private GameObject targetPage1;
-    [SerializeField] private GameObject targetPage2;
-    [SerializeField] private GameObject targetPage3;
-    private Button button;
+    [SerializeField] private GameObject targetPageFlappyBird1;
+    [SerializeField] private GameObject targetPageFlappyBird2;
+    [SerializeField] private GameObject targetPageFlappyBird3;
+    [SerializeField] private GameObject targetPageDoodleJump1;
+    [SerializeField] private GameObject targetPageDoodleJump2;
+    [SerializeField] private GameObject targetPageDoodleJump3;
+    [SerializeField] private GameObject backgroundDoodleJump;
+    private Button playFlappyBirdButton;
+    private Button playDoodleJumpButton;
 
     private void OnEnable()
     {
         var uiDocument = GetComponent<UIDocument>();
-        button = uiDocument.rootVisualElement.Q<Button>("PlayFlappyBirdButton");
-        button.clickable.clicked += LoadTargetPage;
+        playFlappyBirdButton = uiDocument.rootVisualElement.Q<Button>("PlayFlappyBirdButton");
+        playDoodleJumpButton = uiDocument.rootVisualElement.Q<Button>("PlayDoodleJumpButton");
+        playFlappyBirdButton.clickable.clicked += LoadFlappyBirdPages;
+        playDoodleJumpButton.clickable.clicked += LoadDoodleJumpPages;
     }
 
     private void OnDisable()
     {
-        button.clickable.clicked -= LoadTargetPage;
+        playFlappyBirdButton.clickable.clicked -= LoadFlappyBirdPages;
+        playDoodleJumpButton.clickable.clicked -= LoadDoodleJumpPages;
     }
 
-    void LoadTargetPage()
+    void LoadFlappyBirdPages()
     {
         gameObject.SetActive(false);
-        targetPage1.SetActive(true);
-        targetPage2.SetActive(true);
-        targetPage3.SetActive(true);
+        targetPageFlappyBird1.SetActive(true);
+        targetPageFlappyBird2.SetActive(true);
+        targetPageFlappyBird3.SetActive(true);
+
+        // Disable the sprite of the Doodle Jump background
+        var spriteRenderer = backgroundDoodleJump.GetComponent<SpriteRenderer>();
+        if (spriteRenderer != null) spriteRenderer.enabled = false;
+    }
+
+    void LoadDoodleJumpPages()
+    {
+        gameObject.SetActive(false);
+        targetPageDoodleJump1.SetActive(true);
+        targetPageDoodleJump2.SetActive(true);
+        targetPageDoodleJump3.SetActive(true);
     }
 }
