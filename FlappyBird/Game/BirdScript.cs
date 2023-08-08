@@ -23,7 +23,7 @@ public class BirdScript : MonoBehaviour
     void Update()
     {
         // Check the state of the MouseToggleButton
-        if (settingsController.MouseToggleButton.value && Input.GetMouseButtonDown(1) && birdIsAlive)
+        if (settingsController.MouseToggleButton.value && Input.GetMouseButtonDown(0) && birdIsAlive)
         {
             myRidigbody.velocity = Vector2.up * flapStrength;
         }
