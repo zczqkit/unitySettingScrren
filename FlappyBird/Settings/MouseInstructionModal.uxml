@@ -4,7 +4,7 @@
             <ui:Label tabindex="-1" text="Left-click and the bird jumps" display-tooltip-when-elided="true" name="Title" style="width: 100%; height: 100%; font-size: 20%; -unity-text-align: middle-center;" />
         </ui:VisualElement>
         <ui:VisualElement name="MainContents" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 100%; height: 55%; max-height: 55%; min-height: 55%; flex-direction: column; justify-content: center; align-items: center; align-self: center; max-width: 100%; min-width: 100%;">
-            <ui:VisualElement name="MouseImage" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 50%; height: 90%; max-width: 50%; min-width: 50%; justify-content: center; align-items: center; background-image: none; max-height: 90%; min-height: 90%;" />
+            <ui:VisualElement name="animationImage" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 50%; height: 90%; max-width: 50%; min-width: 50%; justify-content: center; align-items: center; background-image: none; max-height: 90%; min-height: 90%;" />
             <ui:Label tabindex="-1" text="Do you use Mouse?" display-tooltip-when-elided="true" name="Confirmation" style="font-size: 18%;" />
         </ui:VisualElement>
         <ui:VisualElement name="ButtonBox" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 100%; align-items: center; justify-content: center; height: 30%; max-height: 30%; min-height: 30%; max-width: 100%; min-width: 100%;">

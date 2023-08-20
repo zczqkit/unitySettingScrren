@@ -27,7 +27,6 @@ public class KeyboardModal : MonoBehaviour
 
     void LoadTargetPageNext()
     {
-        // Set MouseToggleButton to ON when MouseYesButton is clicked
         if (settingsScreenController != null)
         {
             settingsScreenController.KeyboardToggleButton.value = true;
@@ -42,7 +41,6 @@ public class KeyboardModal : MonoBehaviour
 
     void LoadTargetPageBack()
     {
-        // Set MouseToggleButton to OFF when MouseNoButton is clicked
         if (settingsScreenController != null)
         {
             settingsScreenController.KeyboardToggleButton.value = false;

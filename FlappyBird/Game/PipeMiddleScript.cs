@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-
+// The function is adapated from https://www.youtube.com/watch?v=XtQMytORBmM&t=1979s
 public class PipeMiddleScript : MonoBehaviour
 {
     public LogicScript logic;
@@ -15,16 +13,6 @@ public class PipeMiddleScript : MonoBehaviour
         {
             logic = logicObject.GetComponent<LogicScript>();
         }
-
-        if (logic == null)
-        {
-            Debug.LogError("Cannot find 'LogicScript' object or component. Please check if it exists and is correctly tagged.");
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
 
     }
 

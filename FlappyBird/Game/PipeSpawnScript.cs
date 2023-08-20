@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+// The function is adapated from https://www.youtube.com/watch?v=XtQMytORBmM&t=1979s
 public class PipeSpawnScript : MonoBehaviour
 {
     public GameObject pipe;
@@ -9,13 +8,11 @@ public class PipeSpawnScript : MonoBehaviour
     private float timer = 0;
     public float heightOffset = 10;
 
-    // Start is called before the first frame update
     void Start()
     {
         spawnPipe();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (timer < spawnRate)

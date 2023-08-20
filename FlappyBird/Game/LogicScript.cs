@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+// The function is adapated from https://www.youtube.com/watch?v=XtQMytORBmM&t=1979s
 public class LogicScript : MonoBehaviour
 {
     public int playerScore;

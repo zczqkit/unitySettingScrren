@@ -16,13 +16,12 @@ public class MotionInputController : MonoBehaviour
     [SerializeField] public Toggle MotionInput2Button;
     [SerializeField] public Toggle MotionInput3Button;
 
-
-void OnEnable()
+    // The function is adapated from https://docs.unity3d.com/Manual/UIE-Change-Events.html
+    void OnEnable()
     {
         var UIDocument = GetComponent<UIDocument>();
         var root = UIDocument.rootVisualElement;
 
-        // Find the toggle button and the label
         MotionInput1Button = root.Q<Toggle>("MotionInput1Button");
         MotionInput1statusLabel = root.Q<Label>("MotionInput1statusLabel");
 
@@ -32,7 +31,6 @@ void OnEnable()
         MotionInput3Button = root.Q<Toggle>("MotionInput3Button");
         MotionInput3statusLabel = root.Q<Label>("MotionInput3statusLabel");
 
-        // Attach the change event handler
         MotionInput1Button.RegisterCallback<ChangeEvent<bool>>(OnMotionInput1ToggleButtonChanged);
 
         MotionInput2Button.RegisterCallback<ChangeEvent<bool>>(OnMotionInput2ToggleButtonChanged);
@@ -69,7 +67,7 @@ void OnEnable()
             MotionInput1statusLabel.style.color = Color.red;
         }
 
-        // Show or hide the MouseInstructionModal based on the toggle button state
+        // Show or hide the MotionInput1Modal based on the toggle button state
         if (evt.newValue)
         {
             MotionInput1InstructionModal.SetActive(true); // Show the modal
@@ -97,7 +95,7 @@ void OnEnable()
             MotionInput2statusLabel.style.color = Color.red;
         }
 
-        // Show or hide the MouseInstructionModal based on the toggle button state
+        // Show or hide the MotionInput2Modal based on the toggle button state
         if (evt.newValue)
         {
             MotionInput2InstructionModal.SetActive(true); // Show the modal
@@ -123,7 +121,7 @@ void OnEnable()
             MotionInput3statusLabel.text = "OFF";
             MotionInput3statusLabel.style.color = Color.red;
         }
-        // Show or hide the MouseInstructionModal based on the toggle button state
+        // Show or hide the MotionInput3Modal based on the toggle button state
         if (evt.newValue)
         {
             MotionInput3InstructionModal.SetActive(true);

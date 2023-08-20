@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -16,13 +14,12 @@ public class SettingsScreenController : MonoBehaviour
     [SerializeField] public Toggle KeyboardToggleButton;
     [SerializeField] public Toggle MotionInputToggleButton;
 
-
-void OnEnable()
+    // The function is adapated from https://docs.unity3d.com/Manual/UIE-Change-Events.html
+    void OnEnable()
     {
         var UIDocument = GetComponent<UIDocument>();
         var root = UIDocument.rootVisualElement;
 
-        // Find the toggle button and the label
         MouseToggleButton = root.Q<Toggle>("MouseToggleButton");
         MousestatusLabel = root.Q<Label>("MousestatusLabel");
 
@@ -32,7 +29,6 @@ void OnEnable()
         MotionInputToggleButton = root.Q<Toggle>("MotionInputToggleButton");
         MotionInputstatusLabel = root.Q<Label>("MotionInputstatusLabel");
 
-        // Attach the change event handler
         MouseToggleButton.RegisterCallback<ChangeEvent<bool>>(OnMouseToggleButtonChanged);
 
         KeyboardToggleButton.RegisterCallback<ChangeEvent<bool>>(OnKeyboardToggleButtonChanged);
@@ -97,7 +93,7 @@ void OnEnable()
             KeyboardstatusLabel.style.color = Color.red;
         }
 
-        // Show or hide the MouseInstructionModal based on the toggle button state
+        // Show or hide the KeyboardInstructionModal based on the toggle button state
         if (evt.newValue)
         {
             KeyboardInstructionModal.SetActive(true); // Show the modal
@@ -123,7 +119,7 @@ void OnEnable()
             MotionInputstatusLabel.text = "OFF";
             MotionInputstatusLabel.style.color = Color.red;
         }
-        // Show or hide the MouseInstructionModal based on the toggle button state
+       
         if (evt.newValue)
         {
             MotionInputSeclect.SetActive(true);

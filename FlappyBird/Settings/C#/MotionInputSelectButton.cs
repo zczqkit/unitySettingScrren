@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UIElements;
+using System.Collections;
 
 public class MotionInputSelectPage : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class MotionInputSelectPage : MonoBehaviour
     [SerializeField] private GameObject targetPageStart;
     [SerializeField] private GameObject targetPageBack;
     [SerializeField] private SettingsScreenController settingsScreenController;
+    [SerializeField] private GameObject pleaseWaitModal;
     private Button nextButton;
     private Button backButton;
 
@@ -29,18 +31,26 @@ public class MotionInputSelectPage : MonoBehaviour
         backButton.clickable.clicked -= LoadTargetPageBack;
         
     }
+    // The function is adapated from https://stackoverflow.com/questions/64258574/what-is-an-ienumerator-in-c-sharp-and-what-is-it-used-for-in-unity
 
     void LoadTargetPageNext()
     {
-        gameObject.SetActive(false);
-        if (MotionInputController.MotionInput1Button.value || MotionInputController.MotionInput2Button.value || MotionInputController.MotionInput3Button.value
-            )
+        if (MotionInputController.MotionInput1Button.value || MotionInputController.MotionInput2Button.value || MotionInputController.MotionInput3Button.value)
         {
-            if (targetPageStart != null)
-            {
-                targetPageStart.SetActive(true);
-            }
+            StartCoroutine(ShowWaitMessageAndLoadPage());
         }
+    }
+
+    IEnumerator ShowWaitMessageAndLoadPage()
+    {
+        pleaseWaitModal.SetActive(true);
+        yield return new WaitForSeconds(5);
+        pleaseWaitModal.SetActive(false);
+        if (targetPageStart != null)
+        {
+            targetPageStart.SetActive(true);
+        }
+        gameObject.SetActive(false);
     }
 
     void LoadTargetPageBack()
@@ -50,8 +60,7 @@ public class MotionInputSelectPage : MonoBehaviour
         {
             targetPageBack.SetActive(true);
         }
-        // Set MotionInputToggleButton on Controls page to OFF when Back Button on MotionInputSelect Page is clicked
-        if (settingsScreenController != null)
+        if (settingsScreenController != null && settingsScreenController.MotionInputToggleButton != null)
         {
             settingsScreenController.MotionInputToggleButton.value = false;
         }

@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+// The function is adapated from https://stackoverflow.com/questions/64258574/what-is-an-ienumerator-in-c-sharp-and-what-is-it-used-for-in-unity
 public class ImageSwitcher_Doodle : MonoBehaviour
 {
     public VisualElement AnimationBox1;

@@ -31,13 +31,13 @@ public class StartGamePage : MonoBehaviour
     {
         gameObject.SetActive(false);
         if (targetPageNext1 || targetPageNext2 || targetPageNext3
-            || targetPageNext4 != null) 
+            || targetPageNext4 != null)
         {
             targetPageNext1.SetActive(true);
             targetPageNext2.SetActive(true);
             targetPageNext3.SetActive(true);
             targetPageNext4.SetActive(true);
-            
+
         }
     }
 
